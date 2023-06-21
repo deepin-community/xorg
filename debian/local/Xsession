@@ -94,7 +94,9 @@ fi
 
 exec >>"$ERRFILE" 2>&1
 
-echo "$PROGNAME: X session started for $LOGNAME at $(date)"
+# This echo might fail as we just redirect stderr.
+# Just ignore that failure here.
+echo "$PROGNAME: X session started for $LOGNAME at $(date)" || true
 
 # sanity check; is our session script directory present?
 if [ ! -d "$SYSSESSIONDIR" ]; then
