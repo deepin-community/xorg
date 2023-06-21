@@ -1,3 +1,9 @@
+xorg (1:7.7+23-deepin1) stable; urgency=medium
+
+  * fix: void `Xsession` fail when $HOME is full
+
+ -- Chen Linxuan <me@black-desk.cn> Wed, 21 Jun 2023 10:02:06 +08000
+
 xorg (1:7.7+23-deepin) stable; urgency=medium
 
   * ['Rebuild  against by  current gcc 11.2']
