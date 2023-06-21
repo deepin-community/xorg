@@ -6,5 +6,4 @@ on:
 jobs:
   chatopt:
     uses: deepin-community/.github/.github/workflows/chatOps.yml@master
-    secrets:
-      secrets: inherit
+    secrets: inherit
