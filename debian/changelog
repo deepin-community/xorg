@@ -1,3 +1,9 @@
+xorg (1:7.7+23-deepin2) unstable; urgency=medium
+
+  * add debian/source/format.
+
+ -- lichenggang <lichenggang@deepin.org>  Mon, 23 Dec 2024 09:54:51 +0800
+
 xorg (1:7.7+23-deepin1) stable; urgency=medium
 
   * fix: void `Xsession` fail when $HOME is full
