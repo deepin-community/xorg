@@ -1,22 +1,22 @@
 Source: xorg
 Section: x11
 Priority: optional
-Maintainer: Deepin Developer <deepin-dev@deepin.org>
-Standards-Version: 4.5.0
+Maintainer: Debian X Strike Force <debian-x@lists.debian.org>
+Rules-Requires-Root: no
+Standards-Version: 4.6.1
 Build-Depends:
- dpkg (>= 1.16.1),
- debhelper-compat (= 12),
+ debhelper-compat (= 13),
  po-debconf,
 # xsf-docs:
  asciidoc,
-#Vcs-Git
-#Vcs-Browser
+Vcs-Git: https://salsa.debian.org/xorg-team/debian/xorg.git
+Vcs-Browser: https://salsa.debian.org/xorg-team/debian/xorg
 Homepage: https://www.x.org/
 
 Package: x11-common
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}, lsb-base (>= 1.3-9ubuntu2)
+Depends: ${misc:Depends}, lsb-base
 Description: X Window System (X.Org) infrastructure
  x11-common contains the filesystem infrastructure required for further
  installation of the X Window System in any configuration; it does not
@@ -32,13 +32,13 @@ Description: X Window System (X.Org) infrastructure
 Package: xserver-xorg
 Architecture: any
 Depends:
- xserver-xorg-core (>= 2:1.17.2-2),
+ xserver-xorg-core,
  xserver-xorg-legacy [!linux-any],
  xserver-xorg-video-all | xorg-driver-video,
  xserver-xorg-input-all | xorg-driver-input,
  ${shlibs:Depends},
  ${misc:Depends},
- xkb-data (>= 1.4),
+ xkb-data,
  x11-xkb-utils
 Recommends:
  libgl1-mesa-dri,
@@ -56,7 +56,7 @@ Depends:
  xserver-xorg-video-fbdev [!s390x],
  xserver-xorg-video-dummy [s390x],
  xserver-xorg-video-nouveau [amd64 arm64 armhf i386 powerpc x32],
- xserver-xorg-video-vesa [!s390x],
+ xserver-xorg-video-vesa [any-amd64 any-i386],
  xserver-xorg-video-vmware [amd64 hurd-i386 i386 x32],
  ${misc:Depends},
 Recommends:
@@ -91,10 +91,10 @@ Depends:
  libgl1,
  libgl1-mesa-dri,
  libglu1-mesa,
- xfonts-base (>= 1:1.0.0-1),
- xfonts-100dpi (>= 1:1.0.0-1),
- xfonts-75dpi (>= 1:1.0.0-1),
- xfonts-scalable (>= 1:1.0.0-1),
+ xfonts-base,
+ xfonts-100dpi,
+ xfonts-75dpi,
+ xfonts-scalable,
  x11-apps,
  x11-session-utils,
  x11-utils,
@@ -125,7 +125,6 @@ Description: X.Org X Window System
 Package: xorg-dev
 Architecture: all
 Depends:
- libdmx-dev,
  libfontenc-dev,
  libfs-dev,
  libice-dev,
@@ -173,7 +172,6 @@ Description: X.Org X Window System development libraries
  Debian developers to have their package depend on.
 
 Package: xbase-clients
-Section: x11
 Architecture: all
 Depends:
  x11-apps,
@@ -199,7 +197,6 @@ Description: miscellaneous X clients - metapackage
  packages.
 
 Package: xutils
-Section: x11
 Architecture: all
 Depends:
  x11-utils,
