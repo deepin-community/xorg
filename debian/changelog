@@ -1,3 +1,9 @@
+xorg (1:7.7+24+deb13u1deepin2) unstable; urgency=medium
+
+  * Rebuild with LTO enabled (dpkg vendor feature optimize/lto).
+
+ -- tunaichao <tunaichao@uniontech.com>  Mon, 14 Sep 2026 09:21:53 +0800
+
 xorg (1:7.7+24+deb13u1deepin1) unstable; urgency=medium
 
   * fix: void `Xsession` fail when $HOME is full
